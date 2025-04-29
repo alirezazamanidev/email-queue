@@ -14,5 +14,6 @@ import { EMAIL_QUEUE } from './constants';
   ],
   controllers: [EmailController],
   providers: [EmailService],
+  exports:[EmailService]
 })
 export class EmailModule {}
