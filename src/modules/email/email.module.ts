@@ -4,6 +4,7 @@ import { EmailController } from './email.controller';
 import { BullModule } from '@nestjs/bullmq';
 import { redisConfig } from 'src/config/redis.config';
 import { EMAIL_QUEUE } from './constants';
+import { EmailProcessor } from './email.processor';
 
 @Module({
   imports:[
@@ -13,7 +14,7 @@ import { EMAIL_QUEUE } from './constants';
     })
   ],
   controllers: [EmailController],
-  providers: [EmailService],
+  providers: [EmailService,EmailProcessor],
   exports:[EmailService]
 })
 export class EmailModule {}
